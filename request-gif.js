@@ -19,8 +19,15 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
     
     // get the user's input text from the DOM
-    var searchQuery = $( "#form-gif-request input" ).val(); // TODO should be e.g. "dance"
+    var searchQuery = $( "#form-gif-request #tag" ).val(); // TODO should be e.g. "dance"
 
+	// get the user' input text from the capcha
+    var capchaText = $( "#form-gif-request #capcha" ).val();	
+	
+	if (parseInt(capchaText) != 5) {
+		wrongCapcha();
+	}
+	
     // configure a few parameters to attach to our request
     var params = { 
         api_key: "dc6zaTOxFJmzC", 
@@ -28,6 +35,7 @@ function fetchAndDisplayGif(event) {
     };
     
 	console.log("jackson 5 " + searchQuery);
+	console.log(capchaText);
 	
     // make an ajax request for a random GIF
     $.ajax({
@@ -64,6 +72,13 @@ function fetchAndDisplayGif(event) {
 	$("#feedback").attr("hidden", false);	
 	//setTimeout(setGifLoadedStatus(true), 12000);	
 
+}
+
+function wrongCapcha() {
+	console.log("Wrong Capcha Entered");
+	$("#feedback").text("You are a robot!");
+	$("#feedback").attr("hidden", false);
+	console.log("Function wrongCapcha run");
 }
 /**
  * toggles the visibility of UI elements based on whether a GIF is currently loaded.
