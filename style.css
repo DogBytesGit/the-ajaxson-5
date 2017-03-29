@@ -1,0 +1,38 @@
+body {
+    font-family: sans-serif;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+h1 {
+	align: center;
+	text-align: center;
+	padding: 20px;
+	background-color: lightblue;
+	border-style: solid;
+	border-color: blue;
+}
+
+form {
+	padding: 20px;
+	background-color: lightgray;
+	border-style: solid;
+	border-color: gray;
+}
+
+label { 
+	text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+}
+
+input[type=text]{
+	align: center;
+	padding: 10px;
+	width: 80%;
+}
+
+

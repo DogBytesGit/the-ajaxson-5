@@ -58,13 +58,12 @@ function fetchAndDisplayGif(event) {
     });
     
     // TODO
-    // give the user a "Loading..." message while they wait
+    // give the user a "Loading..." message while they wait	
+	
     $("#feedback").text("Loading...");
-	//$("#feedback").attr("hidden", false);	
-	setTimeout(hideDelay, 6000);	
-	function hideDelay() {
-		$("#feedback").attr("hidden", true);
-}
+	$("#feedback").attr("hidden", false);	
+	//setTimeout(setGifLoadedStatus(true), 12000);	
+
 }
 /**
  * toggles the visibility of UI elements based on whether a GIF is currently loaded.
@@ -73,5 +72,5 @@ function fetchAndDisplayGif(event) {
  */
 function setGifLoadedStatus(isCurrentlyLoaded) {
     $("#gif").attr("hidden", !isCurrentlyLoaded);
-    $("#feedback").attr("hidden", isCurrentlyLoaded);
+    $("#feedback").attr("hidden", isCurrentlyLoaded);	
 }
